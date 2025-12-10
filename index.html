@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Message for You ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .wrapper {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.2);
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #ff69b4;
+        }
+        
+        .question {
+            font-size: 3rem;
+            color: #ff1493;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gif {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.2);
+            border: 3px solid #ff69b4;
+        }
+        
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 18px 50px;
+            font-size: 1.4rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            min-width: 150px;
+            letter-spacing: 1px;
+        }
+        
+        .yes-btn {
+            background: linear-gradient(to right, #ff1493, #ff69b4);
+            color: white;
+            box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4);
+        }
+        
+        .yes-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 20, 147, 0.6);
+        }
+        
+        .no-btn {
+            background: linear-gradient(to right, #9370db, #8a2be2);
+            color: white;
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+        
+        .no-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(138, 43, 226, 0.6);
+        }
+        
+        .love-content {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e9 100%);
+            border-radius: 20px;
+            border-left: 5px solid #ff1493;
+            text-align: left;
+            animation: fadeIn 1s ease;
+        }
+        
+        .love-content h3 {
+            color: #ff1493;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .love-content p {
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            border-left: 3px solid #ff69b4;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff1493;
+            animation: floatUp 5s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .wrapper {
+                padding: 30px 20px;
+            }
+            
+            .question {
+                font-size: 2.2rem;
+            }
+            
+            button {
+                padding: 15px 35px;
+                font-size: 1.2rem;
+                min-width: 120px;
+            }
+            
+            .love-content h3 {
+                font-size: 1.8rem;
+            }
+            
+            .love-content p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        .romantic-quote {
+            font-style: italic;
+            color: #ff1493;
+            font-size: 1.3rem;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 182, 193, 0.2);
+            border-radius: 10px;
+            border-right: 3px solid #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2 class="question">You love me?</h2>
+        <img class="gif" alt="Cute Love GIF" src="https://raw.githubusercontent.com/DzarelDeveloper/Img/main/gifyou.webp">
+        <div class="btn-group">
+            <button class="yes-btn">Yes ❤️</button>
+            <button class="no-btn">No 💔</button>
+        </div>
+        
+        <div class="love-content" id="loveContent">
+            <h3>I LOVE YOU MORE ❤️</h3>
+            <div class="romantic-quote">
+                "Sayang, I love you more than words can ever show. I may not say much, but my thoughts and prayers for you never stop. From the deepest part of my heart, I truly love you."
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const yesBtn = document.querySelector('.yes-btn');
+            const noBtn = document.querySelector('.no-btn');
+            const question = document.querySelector('.question');
+            const gif = document.querySelector('.gif');
+            const loveContent = document.getElementById('loveContent');
+            
+            // Create floating hearts in background
+            createFloatingHearts();
+            
+            yesBtn.addEventListener('click', function() {
+                question.textContent = "I LOVE YOU MORE! ❤️💕";
+                // Romantic GIF for Yes button
+                gif.src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmYyNzNuZDJwNzhlZDU5NjNubHZpMmxkM3N5eGZncXBoMXJ1ZjdwcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tpVKvAabWt3G5csMkT/giphy.gif";
+                gif.alt = "Romantic love hearts GIF";
+                
+                // Show love content
+                loveContent.style.display = 'block';
+                
+                // Hide buttons
+                document.querySelector('.btn-group').style.display = 'none';
+                
+                // Add celebration hearts
+                createCelebrationHearts();
+                
+                // Create more floating hearts
+                for(let i = 0; i < 50; i++) {
+                    setTimeout(() => createFloatingHeart(true), i * 100);
+                }
+            });
+            
+            noBtn.addEventListener('mouseover', function() {
+                // Move button to random position when hovered
+                const wrapper = document.querySelector('.wrapper');
+                const wrapperRect = wrapper.getBoundingClientRect();
+                const buttonRect = noBtn.getBoundingClientRect();
+                
+                const maxX = wrapperRect.width - buttonRect.width - 40;
+                const maxY = wrapperRect.height - buttonRect.height - 40;
+                
+                // Ensure button stays within wrapper
+                const randomX = Math.max(20, Math.floor(Math.random() * maxX));
+                const randomY = Math.max(20, Math.floor(Math.random() * maxY));
+                
+                noBtn.style.position = 'absolute';
+                noBtn.style.left = randomX + 'px';
+                noBtn.style.top = randomY + 'px';
+            });
+            
+            noBtn.addEventListener('click', function() {
+                question.textContent = "But I still love you! 💔";
+                // Your chosen GIF for No button
+                gif.src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2Nrbm93a3p5bDliMzMzcHFyN3h2OHViZnlqczdlemZ2YTYzOWpxMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4ZRigpUcEOvMS04bTg/giphy.gif";
+                gif.alt = "Sad but hopeful GIF";
+                
+                // Show broken heart animation
+                createBrokenHearts();
+            });
+            
+            function createFloatingHearts() {
+                const body = document.querySelector('body');
+                
+                for (let i = 0; i < 20; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.innerHTML = '❤️';
+                        heart.classList.add('heart');
+                        heart.style.left = Math.random() * 100 + 'vw';
+                        heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+                        heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+                        heart.style.animationDelay = Math.random() * 2 + 's';
+                        body.appendChild(heart);
+                        
+                        // Remove heart after animation
+                        setTimeout(() => {
+                            heart.remove();
+                        }, 5000);
+                    }, i * 300);
+                }
+            }
+            
+            function createFloatingHeart(isCelebration = false) {
+                const wrapper = document.querySelector('.wrapper');
+                const heart = document.createElement('div');
+                heart.innerHTML = isCelebration ? '💖' : '❤️';
+                heart.style.position = 'absolute';
+                heart.style.fontSize = Math.random() * 25 + 20 + 'px';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = Math.random() * 100 + '%';
+                heart.style.opacity = '0.9';
+                heart.style.animation = `floatUp ${Math.random() * 2 + 2}s ease-in-out forwards`;
+                wrapper.appendChild(heart);
+                
+                // Remove heart after animation
+                setTimeout(() => {
+                    heart.remove();
+                }, 3000);
+            }
+            
+            function createCelebrationHearts() {
+                const wrapper = document.querySelector('.wrapper');
+                
+                for (let i = 0; i < 30; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.innerHTML = '💖';
+                        heart.style.position = 'absolute';
+                        heart.style.fontSize = Math.random() * 30 + 25 + 'px';
+                        heart.style.left = Math.random() * 100 + '%';
+                        heart.style.top = Math.random() * 100 + '%';
+                        heart.style.opacity = '0.8';
+                        heart.style.animation = `floatUp ${Math.random() * 2 + 1}s ease-in-out forwards`;
+                        wrapper.appendChild(heart);
+                        
+                        setTimeout(() => {
+                            heart.remove();
+                        }, 3000);
+                    }, i * 100);
+                }
+            }
+            
+            function createBrokenHearts() {
+                const wrapper = document.querySelector('.wrapper');
+                
+                for (let i = 0; i < 15; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.innerHTML = '💔';
+                        heart.style.position = 'absolute';
+                        heart.style.fontSize = Math.random() * 25 + 20 + 'px';
+                        heart.style.left = Math.random() * 100 + '%';
+                        heart.style.top = Math.random() * 100 + '%';
+                        heart.style.opacity = '0.8';
+                        heart.style.animation = `floatUp ${Math.random() * 2 + 2}s ease-in-out forwards`;
+                        wrapper.appendChild(heart);
+                        
+                        setTimeout(() => {
+                            heart.remove();
+                        }, 3000);
+                    }, i * 150);
+                }
+            }
+            
+            // Keep creating floating hearts
+            setInterval(createFloatingHearts, 8000);
+        });
+    </script>
+</body>
+</html>
